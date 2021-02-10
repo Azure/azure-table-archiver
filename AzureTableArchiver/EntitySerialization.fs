@@ -17,6 +17,7 @@ module EntitySerialization =
           Int32Value : Nullable<Int32>
           Int64Value : Nullable<Int64> }
     with
+        /// Default record with every field set to default values - null / Nullable()
         static member Default =
             {
                 EdmType = EdmType.String
@@ -29,6 +30,7 @@ module EntitySerialization =
                 Int32Value = Nullable ()
                 Int64Value = Nullable ()
             }
+        /// Create an EntityProperty from a PropertyValue record.
         static member AsEntityProperty (propertyValue:PropertyValue) : EntityProperty =
             match propertyValue.EdmType with
             | EdmType.String ->
@@ -48,6 +50,7 @@ module EntitySerialization =
             | EdmType.Int64 ->
                 EntityProperty(propertyValue.Int64Value)
             | _ -> null
+        /// Create a PropertyValue record from an EntityProperty.
         static member OfEntityProperty (entityProperty:EntityProperty) : PropertyValue =
             match entityProperty.PropertyType with
             | EdmType.String ->
@@ -68,13 +71,16 @@ module EntitySerialization =
                 { PropertyValue.Default with EdmType = entityProperty.PropertyType; Int64Value = entityProperty.Int64Value }
             | _ -> PropertyValue.Default
 
+    /// Extension methods on DynamicTableEntity for converting to and from JSON
     type DynamicTableEntity with
+        /// Converts this to a dictionary of PropertyValue records and serializes it to JSON.
         member this.ToJson () =
             let props =
                 this.Properties
                 |> Seq.map (fun kvp -> kvp.Key, (PropertyValue.OfEntityProperty kvp.Value))
                 |> dict
             System.Text.Json.JsonSerializer.Serialize (props, System.Text.Json.JsonSerializerOptions (IgnoreNullValues=true))
+        /// Parses JSON into a dictionary and PropertyValue records and converts each to EntityProperties on this entity.
         member this.LoadJson (json:string) =
             let (dictionary:System.Collections.Generic.Dictionary<string, PropertyValue>) = System.Text.Json.JsonSerializer.Deserialize json
             for kvp in dictionary do

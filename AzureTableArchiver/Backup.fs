@@ -10,6 +10,7 @@ module Backup =
     /// Use a generated filepath.
     let GeneratedBackupPath = Option<FilePath>.None
 
+    /// List tables and then create backups of each one in parallel.
     let backupTables : BackupTables =
         fun listTables dumpTable backupPath ->
             async {
@@ -22,6 +23,7 @@ module Backup =
                 return backupPath
             }
 
+    /// List all of the storage tables in the account.
     let listStorageTables (cloudTableClient:CloudTableClient) : ListTables =
         async {
             let rec getTables (continuationToken) (acc:CloudTable list) =
@@ -36,6 +38,7 @@ module Backup =
             return allTables |> List.map (fun t -> t.Name)
         }
 
+    /// Query for all the data in the table and write each record to a JSON file.
     let dumpTableToJsonFiles (cloudTableClient:CloudTableClient) : DumpTable =
         fun (tableName, filePath) ->
             async {

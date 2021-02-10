@@ -1,9 +1,12 @@
 namespace AzureTableArchiver
 
+/// Alias to clarify the intention of a string as a TableName clearer.
 type TableName = string
+
 /// Lists the storage tables in a storage account.
 type ListTables = Async<TableName list>
 
+/// Alias to clarify the intention of a string as a FilePath clearer.
 type FilePath = string
 
 /// Dumps a storage table to a list of files.

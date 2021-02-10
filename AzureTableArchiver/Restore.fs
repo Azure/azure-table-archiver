@@ -5,12 +5,14 @@ open EntitySerialization
 
 module Restore =
 
+    /// Reads a JSON file and deserializes it into a DynamicTableEntity.
     let entityFromJsonFile (partition:string) (rowKey:string) (filePath:string) : Async<DynamicTableEntity> =
         async {
             let! json = System.IO.File.ReadAllTextAsync filePath |> Async.AwaitTask
             return DynamicTableEntity(partition,rowKey).LoadJson json
         }
 
+    /// Reads files in each table partition directory in parallel and inserts or replaces the record in each table.
     let restoreTables (cloudTableClient:CloudTableClient) : RestoreTables =
         fun (filePath:FilePath) ->
             async {

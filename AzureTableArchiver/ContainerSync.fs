@@ -6,6 +6,7 @@ open Microsoft.Azure.Storage.DataMovement
 
 module ContainerSync =
 
+    /// Synchronize a local archive directory with a storage account container directory.
     let syncToContainer (blobClient:CloudBlobClient) (reportProgress:Progress<TransferStatus> option) : SyncBackupToStorage =
         fun backupLocation ->
         async {
@@ -24,6 +25,7 @@ module ContainerSync =
                 return Ok ()
         }
 
+    /// Synchronize a storage account container directory with a local directory for restoring an archive.
     let syncFromContainer (blobClient:CloudBlobClient) (reportProgress:Progress<TransferStatus> option) : SyncStorageToRestore =
         fun (restoreLocation:RestoreLocation) ->
             async {
