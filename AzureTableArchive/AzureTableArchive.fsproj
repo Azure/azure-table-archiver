@@ -1,0 +1,22 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFrameworks>net5.0;netstandard2.1</TargetFrameworks>
+        <RootNamespace>StorageTableBackup</RootNamespace>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <Compile Include="Domain.fs" />
+        <Compile Include="EntitySerialization.fs" />
+        <Compile Include="Backup.fs" />
+        <Compile Include="ContainerSync.fs" />
+        <Compile Include="Restore.fs" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Microsoft.Azure.Cosmos.Table" Version="1.0.8" />
+      <PackageReference Include="Microsoft.Azure.Storage.DataMovement" Version="2.0.1" />
+      <PackageReference Include="System.Text.Json" Version="5.0.1" />
+    </ItemGroup>
+
+</Project>
