@@ -7,7 +7,7 @@ open Microsoft.Azure.Cosmos.Table
 open Microsoft.Azure.Storage.Blob
 open Microsoft.Azure.Storage.DataMovement
 open Moq
-open AzureTableArchive
+open AzureTableArchiver
 
 // TableResultSegment is sealed with internal setters - unmockable - using reflection to make instances for mocks.
 let createTableResultSegment (cloudTables:seq<CloudTable>) =

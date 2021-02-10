@@ -1,4 +1,4 @@
-namespace AzureTableArchive
+namespace AzureTableArchiver
 
 type TableName = string
 /// Lists the storage tables in a storage account.

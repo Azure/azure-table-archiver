@@ -1,7 +1,7 @@
-AzureTableArchive Development Guide
+Development Guide
 ========
 
-The AzureTableArchive library is broken into several modules.
+The AzureTableArchiver is broken into several modules.
 
 ### Domain.fs
 The Domain module contains general type definitions for both structure and behavior.

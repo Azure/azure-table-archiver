@@ -1,4 +1,4 @@
-namespace AzureTableArchive
+namespace AzureTableArchiver
 
 open Microsoft.Azure.Cosmos.Table
 open EntitySerialization

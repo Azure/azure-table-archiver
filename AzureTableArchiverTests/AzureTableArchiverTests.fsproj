@@ -4,7 +4,7 @@
     <OutputType>Exe</OutputType>
     <TargetFramework>net5.0</TargetFramework>
     <GenerateProgramFile>false</GenerateProgramFile>
-    <RootNamespace>StorageTableBackupTests</RootNamespace>
+    <RootNamespace>AzureTableArchiverTests</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
@@ -22,6 +22,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\AzureTableArchive\AzureTableArchive.fsproj" />
+    <ProjectReference Include="..\AzureTableArchiver\AzureTableArchiver.fsproj" />
   </ItemGroup>
 </Project>

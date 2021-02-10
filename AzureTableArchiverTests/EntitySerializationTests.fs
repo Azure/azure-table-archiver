@@ -3,7 +3,7 @@ module EntitySerializationTests
 open System
 open Expecto
 open Microsoft.Azure.Cosmos.Table
-open AzureTableArchive
+open AzureTableArchiver
 open EntitySerialization
 
 [<Tests>]

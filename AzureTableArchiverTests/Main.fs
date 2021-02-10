@@ -1,4 +1,4 @@
-﻿module AzureTableArchiveTests
+﻿module AzureTableArchiverTests
 open Expecto
 
 [<EntryPoint>]

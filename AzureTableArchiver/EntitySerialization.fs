@@ -1,4 +1,4 @@
-namespace AzureTableArchive
+namespace AzureTableArchiver
 
 open System
 open Microsoft.Azure.Cosmos.Table
