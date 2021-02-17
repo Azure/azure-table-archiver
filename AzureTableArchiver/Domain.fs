@@ -1,3 +1,5 @@
+// Copyright (c) Microsoft Corporation.
+// Licensed under the MIT License.
 namespace AzureTableArchiver
 
 /// Alias to clarify the intention of a string as a TableName clearer.

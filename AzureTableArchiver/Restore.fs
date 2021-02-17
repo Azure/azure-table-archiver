@@ -1,3 +1,5 @@
+// Copyright (c) Microsoft Corporation.
+// Licensed under the MIT License.
 namespace AzureTableArchiver
 
 open Microsoft.Azure.Cosmos.Table
