@@ -11,6 +11,8 @@ Archives are not pruned by this library - it's recommended to enable blob expira
 
 Existing records in tables are not removed prior to restore, so records that were added to the tables since the backup was taken will be left in the table.
 
+Please refer to [Usage](docs/usage.md) for using this library in your applications.
+
 ## Contributing
 
 Please read the [Development Guide](docs/development.md) to understand the project structure and the local development and testing process.
