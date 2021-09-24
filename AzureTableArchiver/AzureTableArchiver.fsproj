@@ -3,7 +3,18 @@
     <PropertyGroup>
         <TargetFrameworks>net5.0;netstandard2.1</TargetFrameworks>
         <RootNamespace>AzureTableArchiver</RootNamespace>
+        <Authors>Dave Curylo</Authors>
+        <Copyright>2021 Dave Curylo</Copyright>
+        <PackageProjectUrl>https://github.com/Azure/azure-table-archiver</PackageProjectUrl>
+        <Description>Library to archive, backup, and restore StorageAccount and CosmosDB tables to Blob Containers.</Description>
+        <RepositoryUrl>https://github.com/Azure/azure-table-archiver</RepositoryUrl>
+        <PackageTags>azure storage cosmos</PackageTags>
+        <PackageLicenseFile>LICENSE</PackageLicenseFile>
     </PropertyGroup>
+
+    <ItemGroup>
+        <None Include="../LICENSE" Pack="true" PackagePath="" />
+    </ItemGroup>
 
     <ItemGroup>
         <Compile Include="Domain.fs" />
@@ -16,6 +27,8 @@
     <ItemGroup>
       <PackageReference Include="Microsoft.Azure.Cosmos.Table" Version="1.0.8" />
       <PackageReference Include="Microsoft.Azure.Storage.DataMovement" Version="2.0.1" />
+    </ItemGroup>
+    <ItemGroup Condition=" '$(TargetFramework)' == 'netstandard2.1' ">
       <PackageReference Include="System.Text.Json" Version="5.0.1" />
     </ItemGroup>
 
