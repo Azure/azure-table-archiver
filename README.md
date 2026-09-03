@@ -2,8 +2,7 @@ AzureTableArchiver
 ==================
 
 [![Build and Test](https://github.com/Azure/azure-table-archiver/actions/workflows/build-and-test.yml/badge.svg)](https://github.com/Azure/azure-table-archiver/actions/workflows/build-and-test.yml)
-[![AzureTableArchiver on Nuget](https://buildstats.info/nuget/AzureTableArchiver)](https://www.nuget.org/packages/AzureTableArchiver/)
-
+[![AzureTableArchiver on Nuget](https://img.shields.io/nuget/dt/AzureTableArchiver)](https://www.nuget.org/packages/AzureTableArchiver/)
 
 The AzureTableArchiver is intended for creating archives of Azure Storage Tables from Storage Accounts or Cosmos DB and storing them in Azure Storage Blob containers. Because multiple archives may be retained, previous copies of table records are available to restore from the various points of time when archives are created.
 
