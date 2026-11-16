@@ -1,0 +1,2 @@
+.gitattributes text eol=lf
+.github/workflows/actions.lock text eol=lf
